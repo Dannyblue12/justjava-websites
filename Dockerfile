@@ -1,14 +1,14 @@
-# Use official OpenJDK 17 image
-FROM openjdk:17-jdk-slim
+# Use a reliable JDK 17 image
+FROM eclipse-temurin:17-jdk
 
-# Set working directory in container
+# Set working directory
 WORKDIR /app
 
-# Copy your built JAR into the container
+# Copy your jar to the container
 COPY target/practicingJava-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose the port your Spring Boot app uses (default 8080)
+# Expose the port your app runs on (default Spring Boot 8080)
 EXPOSE 8080
 
-# Run the JAR
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the jar
+ENTRYPOINT ["java","-jar","app.jar"]
