@@ -1,20 +1,25 @@
-# Start from a Java 17 JDK
+# Use Java 17 JDK
 FROM eclipse-temurin:17-jdk
 
-# Set workdir
+# Set working directory
 WORKDIR /app
 
-# Copy project files
+# Copy Maven wrapper and project files
+COPY mvnw .
+COPY .mvn .mvn
 COPY pom.xml .
 COPY src ./src
 
-# Build the jar inside Docker
+# Make mvnw executable
+RUN chmod +x mvnw
+
+# Build jar inside Docker
 RUN ./mvnw clean package -DskipTests
 
-# Copy the built jar to a standard location
+# Copy built jar to standard name
 RUN cp target/practicingJava-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose the port
+# Expose port
 EXPOSE 8080
 
 # Run the jar
