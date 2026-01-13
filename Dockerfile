@@ -1,13 +1,20 @@
-# Use a reliable JDK 17 image
+# Start from a Java 17 JDK
 FROM eclipse-temurin:17-jdk
 
-# Set working directory
+# Set workdir
 WORKDIR /app
 
-# Copy your jar to the container
-COPY target/practicingJava-0.0.1-SNAPSHOT.jar app.jar
+# Copy project files
+COPY pom.xml .
+COPY src ./src
 
-# Expose the port your app runs on (default Spring Boot 8080)
+# Build the jar inside Docker
+RUN ./mvnw clean package -DskipTests
+
+# Copy the built jar to a standard location
+RUN cp target/practicingJava-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose the port
 EXPOSE 8080
 
 # Run the jar
