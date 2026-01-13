@@ -21,7 +21,7 @@ public class HomeController {
                         "32603aa2bb5a605bdf4f394aa9dbfdb440bdd68e.jpg"
                 ),
                 new Testimonial(
-                        "JustJava rebuilt our backend and delivered on time.",
+                        "JustJava rebuilt our backend and delivered on time and i really enjoy using their services a lot",
                         "Sarah White",
                         "Product Manager",
                         "sarah.jpg"
