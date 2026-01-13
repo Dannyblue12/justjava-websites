@@ -18,7 +18,7 @@ public class HomeController {
                         "We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team",
                         "Simon Claw",
                         "CEO & Co-Founder",
-                        "simon.jpg"
+                        "32603aa2bb5a605bdf4f394aa9dbfdb440bdd68e.jpg"
                 ),
                 new Testimonial(
                         "JustJava rebuilt our backend and delivered on time.",
