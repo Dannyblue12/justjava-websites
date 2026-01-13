@@ -1,0 +1,1486 @@
+@import url('https://fonts.cdnfonts.com/css/creato-display');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Creato Display', sans-serif;
+    background: #F8F9FB;
+    overflow-x: hidden;
+    color: #070F29;
+}
+
+/* Updated navbar to match exact specifications with responsive design */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 177px;
+    padding: 54px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: #EEF2F7;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    width: 1720px;
+    max-width: 100%;
+    height: 69px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-items-wrapper {
+    width: 531px;
+    height: 69px;
+    background: #EBEBEB;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    gap: 24px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Updated nav-item hover animation with background and gradient text */
+.nav-item {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: #070F29;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 53px;
+    border-radius: 50px;
+    gap: 8px;
+    transition: all 300ms ease-out;
+    position: relative;
+}
+
+.nav-item:hover {
+    background: #F5F5F5;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+}
+
+.book-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 153px;
+    height: 48px;
+    padding: 8px 16px;
+
+    box-sizing: border-box;
+
+    border-radius: 100px;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    text-decoration: none;
+}
+
+
+.book-call-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.btn-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #FFFFFF;
+    letter-spacing: 0%;
+}
+
+
+/* Updated Hero Section with responsive design and grid layout */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 177px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background: #F8F9FB;
+}
+
+.hero-bg-vector {
+    position: absolute;
+    top: 330px;
+    left: -356px;
+    width: 2400px;
+    height: 772px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-bg-vector svg {
+    width: 80%;
+    height: 80%;
+}
+
+.hero-container {
+    width: 1720px;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text-content {
+    width: 100%;
+    max-width: 806px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: 50px;
+}
+
+/* Updated hero headline with exact typography specifications from design doc */
+.hero-headline {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 75px;
+    color: #070F29;
+    text-align: left;
+}
+
+.inline-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    vertical-align: middle;
+}
+
+/* Updated dynamic GIF sizing to match specifications (120x80px from design doc) */
+.dynamic-gif {
+    width: 120px;
+    height: 80px;
+    border-radius: 50px;
+    object-fit: cover;
+    transition: all 0.3s ease-out;
+    vertical-align: middle;
+}
+
+.dynamic-text {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.98, 0.02, 0, 1);
+}
+
+/* Updated opacity text color to match #070F2980 (50% opacity as specified) */
+.opacity-text {
+    color: rgba(7, 15, 41, 0.5);
+}
+
+/* Added background styling for Build text */
+.action-text {
+    padding: 10px 16px;
+    background: transparent;
+    border-radius: 10px;
+    color: rgba(7, 15, 41, 0.5);
+}
+
+.black-text {
+    color: #000000;
+}
+
+/* Added gradient hover effect for product words (MVPs/Software/Apps/Workflows) */
+#slot-3:hover {
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+/* Updated hero subtext with exact specifications from design doc */
+.hero-subtext {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #7E828F;
+    max-width: 806px;
+}
+
+.book-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 153px;
+    height: 48px;
+    padding: 8px 16px;
+
+    box-sizing: border-box;
+
+    border-radius: 100px;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    text-decoration: none;
+}
+
+
+.book-call-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.btn-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #FFFFFF;
+    letter-spacing: 0%;
+}
+
+
+.hero-visual-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+}
+
+.visual-bg-blob {
+    position: absolute;
+    width: 177px;
+    height: 263px;
+    top: 50px;
+    right: -20px;
+    background: linear-gradient(319.76deg, rgba(245, 245, 245, 0) 34.06%, #F5F5F5 62.15%);
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 36px;
+    background: #255BEC;
+    overflow: hidden;
+}
+
+.hero-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: normal;
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 96px;
+    background: #FFFFFF;
+    border-radius: 45px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.video-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play-btn svg {
+    margin-left: 4px;
+}
+
+/* Added responsive media queries for better mobile and tablet experience */
+@media (max-width: 1440px) {
+    .navbar {
+        height: 140px;
+        padding: 40px 40px;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+
+    .hero-container {
+        width: 100%;
+        gap: 32px;
+    }
+
+    .hero-headline {
+        font-size: 52px;
+        line-height: 65px;
+    }
+
+    .dynamic-gif {
+        width: 96px;
+        height: 64px;
+    }
+
+    .hero-visual-content {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        height: 120px;
+        padding: 30px 30px;
+    }
+
+    .nav-items-wrapper {
+        width: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .hero-text-content {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hero-headline {
+        font-size: 45px;
+        line-height: 55px;
+        text-align: center;
+    }
+
+    .hero-subtext {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .hero-visual-content {
+        width: 100%;
+        max-width: 600px;
+        height: 450px;
+    }
+
+    .hero-cta-btn-large {
+        margin: 24px auto 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 100px;
+        padding: 20px 20px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 36px;
+    }
+
+    .nav-items-wrapper {
+        display: none;
+    }
+
+    .book-call-btn {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .hero-headline {
+        font-size: 35px;
+        line-height: 42px;
+    }
+
+    .dynamic-gif {
+        width: 60px;
+        height: 40px;
+    }
+
+    .hero-subtext {
+        font-size: 16px;
+    }
+
+    .hero-cta-btn-large {
+        width: 300px;
+        height: 70px;
+    }
+
+    .hero-visual-content {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 15px;
+        height: 90px;
+    }
+
+    .hero-headline {
+        font-size: 28px;
+        line-height: 35px;
+    }
+
+    .hero-cta-btn-large {
+        width: 280px;
+        height: 65px;
+    }
+
+    .cta-large-text {
+        font-size: 16px;
+    }
+
+    .dynamic-gif {
+        width: 50px;
+        height: 32px;
+    }
+}
+
+/* Services Section - CoreCare & DeliveryOS */
+/* Made services section responsive with grid layout and removed unnecessary spacing */
+.services-section {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    margin-top: 60px;
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.service-card {
+    width: 90%;
+    min-height: 70px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #00000014;
+    background: #F5F5F5;
+    box-sizing: border-box;
+}
+
+.service-card-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-content-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.service-title {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 550;
+    font-size: clamp(18px, 4vw, 28px);
+    line-height: 100%;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-tm {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 550;
+    font-size: clamp(10px, 2vw, 14px);
+    line-height: 100%;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    vertical-align: super;
+}
+
+.service-subtitle {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 450;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 110%;
+    color: #070F29;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Our Services Grid Section */
+/* Made Our Services section responsive with grid layout and moderate spacing */
+.our-services-grid {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.our-services-bg-svg {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: auto;
+    opacity: 0.8;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.our-services-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.grid-card {
+    width: 100%;
+    min-height: 420px; /* INCREASED HEIGHT */
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(7, 15, 41, 0.1);
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.card-icon-gif {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-title-lg {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 600;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.1;
+    color: #070F29;
+}
+
+.card-title-sm {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.1;
+    color: #070F29;
+}
+
+.tm-super {
+    vertical-align: super;
+    font-size: 0.6em;
+}
+
+.card-desc {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 140%;
+    text-align: left;
+    color: rgba(7, 15, 41, 0.5);
+}
+
+.spacer-gap {
+    flex: 1;
+}
+
+.learn-more-component {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(7, 15, 41, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.learn-more-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(7, 15, 41, 0.5);
+    flex-shrink: 0;
+}
+
+.learn-more-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    color: #070F29;
+}
+
+/* Who We Serve Section */
+/* Made Who We Serve section responsive with grid layout instead of absolute positioning */
+.who-we-serve-section {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-heading {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #070F29;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+/* --- 3. CARDS CONTAINER --- */
+.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 60px 0;
+
+    /* Shifts the whole row left to help E-commerce clip off-screen */
+    margin-left: -60px;
+}
+
+/* --- 4. SHARED CARD STYLES --- */
+.card {
+    /* Layout: Tight spacing */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+
+    /* --- UPDATED DIMENSIONS --- */
+    width: 380px;
+    /* Increased min-height for more breathing room as requested */
+    min-height: 320px;
+    height: auto;
+    flex-shrink: 0;
+
+    /* Visuals */
+    border-radius: 40px;
+    border: 1px solid rgba(7, 15, 41, 0.5);
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* --- 5. SPECIFIC ROTATIONS & POSITIONS --- */
+
+/* Card 1: E-Commerce */
+.ecommerce-card {
+    background-color: #5ACAF8;
+    /* UPDATED POSITION:
+       - Changed translateX from -50px to -20px.
+       - This moves it to the right, so it's only partially cut off.
+    */
+    transform: rotate(8.32deg) translateX(-20px) translateY(20px);
+    z-index: 1;
+    margin-right: -50px;
+}
+
+/* Card 2: Startups */
+.startups-card {
+    background-color: #89A6F1;
+    transform: rotate(-6.36deg) translateY(-20px);
+    z-index: 10; /* Sits on top */
+    margin-right: -50px;
+}
+
+/* Card 3: SaaS Founders */
+.saas-card {
+    background-color: #B37EFB;
+    transform: rotate(8.38deg) translateY(10px);
+    z-index: 2;
+    margin-right: -50px;
+}
+
+/* Card 4: EdTech */
+.edtech-card {
+    background-color: #933BFF;
+    transform: rotate(-19.58deg) translateY(-30px);
+    z-index: 5;
+}
+
+/* --- 6. INTERNAL CONTENT --- */
+
+/* Wallet Box */
+.wallet-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wallet-gif {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* --- UPDATED HEADING FONT SIZE --- */
+.card-heading {
+    font-weight: 700; /* Bold */
+    /* Increased from 32px to 40px to match the screenshot's prominence */
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #070F29;
+    margin: 0;
+}
+
+/* Badges */
+.badges-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+}
+
+.badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 10px;
+    gap: 4px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+/* Subtext */
+.card-subtext {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: rgba(7, 15, 41, 0.85);
+    margin: 0;
+}
+
+/* Button */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.circle-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(7, 15, 41, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.btn-text {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    color: #070F29;
+}
+
+.action-btn:hover .circle-icon {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- 7. RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .cards-wrapper {
+        margin-left: 0;
+        gap: 20px;
+    }
+    .ecommerce-card {
+        transform: rotate(-4deg);
+        margin-left: -20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cards-wrapper {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .card {
+        transform: rotate(0deg) !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
+    }
+
+    .badges-row {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Testimonials Section */
+/* Made testimonials section responsive with grid layout and moderate spacing */
+.testimonials-section {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 80px 40px; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.testimonials-grid {
+    width: 100%;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonial-card {
+    width: 100%; /* Changed from 300px to 100% to fit grid */
+    min-height: 420px; /* Adjusted min-height */
+    padding: 24px; /* Changed from 20px to 24px */
+    border-radius: 20px; /* Changed from 40px to 20px */
+    border: 1px solid rgba(7, 15, 41, 0.1);
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Changed from 32px to 20px */
+    box-sizing: border-box;
+    transition: all 300ms ease-out;
+}
+
+.testimonial-card:hover {
+    background: #FFFFFF;
+    border-image-source: linear-gradient(153.03deg, #532FF7 0%, rgba(7, 15, 41, 0) 99.98%);
+    box-shadow: 0px 4px 12px 4px rgba(84, 44, 246, 0.25);
+}
+
+.testimonial-text-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px 0;
+}
+
+.stars-layout {
+    width: 120px;
+    height: 20px;
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background: #EBEBEB;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transition: all 300ms ease-out;
+}
+
+.testimonial-card:hover .star {
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+}
+
+.testimonial-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 200;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 140%;
+    letter-spacing: -2%;
+    color: rgba(7, 15, 41, 0.5);
+    transition: all 300ms ease-out;
+}
+
+.testimonial-card:hover .testimonial-text {
+    color: #070F29;
+}
+
+.ceo-container {
+    width: 100%;
+    height: 100px;
+    border-radius: 100px;
+    padding: 12px;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.ceo-image {
+    width: 76px;
+    height: 76px;
+    border-radius: 100px;
+    background: #CCCCCC;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.ceo-text-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ceo-name {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: #070F29;
+}
+
+.ceo-title {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 100%;
+    color: #7E828F;
+}
+
+/* Added responsive media queries for all sections */
+@media (max-width: 1024px) {
+    .services-section,
+    .our-services-grid,
+    .who-we-serve-section,
+    .testimonials-section {
+        padding: 40px 20px;
+        margin-top: 50px;
+    }
+
+    .section-title {
+        font-size: clamp(40px, 5vw, 78px);
+    }
+
+    .grid-container,
+    .cards-section,
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-section {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .services-section,
+    .our-services-grid,
+    .who-we-serve-section,
+    .testimonials-section {
+        padding: 32px 16px;
+        margin-top: 40px;
+    }
+
+    .grid-card,
+    .serve-card,
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section,
+    .our-services-grid,
+    .who-we-serve-section,
+    .testimonials-section {
+        padding: 20px 12px;
+        margin-top: 25px;
+    }
+
+    .service-card,
+    .grid-card,
+    .serve-card,
+    .testimonial-card {
+        padding: 16px;
+    }
+}
+
+/* CTA Section */
+.cta-section {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 80px 40px; /* Adjusted padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 380px;
+    border-radius: 40px;
+    background: #F5F5F5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.cta-title {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 550;
+    font-size: clamp(24px, 4vw, 56px);
+    line-height: 70px;
+    letter-spacing: -2%;
+    text-align: center;
+    color: #070F29;
+}
+
+.consult-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 320px;
+    height: 72px;
+    padding: 12px;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    border-radius: 160px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.consult-btn:hover {
+    transform: translateY(-2px);
+}
+
+.arrow-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: center;
+}
+
+.sub-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.1;
+    text-align: left;
+    color: #EBEBEB;
+}
+
+.main-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 14px;
+    letter-spacing: -0.2px;
+    color: #F5F5F5;
+    padding-bottom: 2px;
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 80px 40px; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-first-layout {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 100%;
+    color: #070F29;
+    max-width: 600px;
+}
+
+.email-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 320px;
+    height: 44px;
+}
+
+.profile-icon {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.email-input {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid #EBEBEB;
+    padding: 12px 20px 12px 50px;
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 110%;
+    color: rgba(7, 15, 41, 0.5);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.subscribe-btn {
+    width: 130px;
+    height: 44px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.subscribe-btn:hover {
+    transform: translateY(-2px);
+}
+
+.subscribe-text {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+
+.send-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Added responsive media queries for all new sections */
+@media (max-width: 1440px) {
+    .who-we-serve-section,
+    .testimonials-section,
+    .cta-section,
+    .footer {
+        padding: 70px 70px;
+    }
+
+    .testimonial-card {
+        min-width: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .who-we-serve-section,
+    .testimonials-section,
+    .cta-section,
+    .footer {
+        padding: 50px 30px;
+    }
+
+    .cards-section,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .testimonial-card {
+        min-width: 100%;
+    }
+
+    .consult-btn {
+        width: 280px;
+        height: 64px;
+    }
+
+    .footer-first-layout {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .who-we-serve-section,
+    .testimonials-section,
+    .cta-section,
+    .footer {
+        padding: 32px 18px;
+    }
+
+    .serve-title {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .consult-btn {
+        width: 260px;
+        height: 60px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    .email-field {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscribe-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .serve-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .cta-title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .consult-btn {
+        width: 240px;
+        height: 56px;
+    }
+
+    .ceo-name {
+        font-size: 16px;
+    }
+
+    .ceo-title {
+        font-size: 13px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.98, 0.02, 0, 1);
+}
+
+/* </CHANGE> Added styling for edit buttons */
+.edit-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(7, 15, 41, 0.5);
+    transition: color 0.3s ease;
+}
+
+.edit-icon-btn:hover {
+    color: #070F29;
+}
+
+.edit-testimonial-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(7, 15, 41, 0.3);
+    transition: color 0.3s ease;
+}
+
+.edit-testimonial-btn:hover {
+    color: rgba(7, 15, 41, 0.8);
+}
