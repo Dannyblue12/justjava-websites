@@ -1449,38 +1449,3 @@ body {
     animation: fadeIn 0.3s cubic-bezier(0.98, 0.02, 0, 1);
 }
 
-/* </CHANGE> Added styling for edit buttons */
-.edit-icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(7, 15, 41, 0.5);
-    transition: color 0.3s ease;
-}
-
-.edit-icon-btn:hover {
-    color: #070F29;
-}
-
-.edit-testimonial-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    position: absolute;
-    top: -5px;
-    right: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(7, 15, 41, 0.3);
-    transition: color 0.3s ease;
-}
-
-.edit-testimonial-btn:hover {
-    color: rgba(7, 15, 41, 0.8);
-}
