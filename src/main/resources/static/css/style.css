@@ -1449,3 +1449,164 @@ body {
     animation: fadeIn 0.3s cubic-bezier(0.98, 0.02, 0, 1);
 }
 
+/* Wrapper for the edit section */
+.editable-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* The View Mode (Text + Pencil) */
+.display-view {
+    position: relative;
+    /* Flex allows the pencil to sit next to text if needed,
+       or block to sit under. keeping it simple here */
+}
+
+/* The Hidden Form Container */
+.edit-form-container {
+    display: none; /* Hidden by default */
+    margin-top: 10px;
+}
+
+/* The Textarea styling */
+.edit-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 2px solid #780AFF;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    outline: none;
+    background: #fff;
+    color: #000;
+}
+
+/* Save Button */
+.save-btn {
+    background: #780AFF;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+    float: right;
+}
+
+.save-btn:hover {
+    background: #5e00d4;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-right: 10px;
+    float: right;
+}
+
+.cancel-btn:hover {
+    background: #d0d0d0;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Edit Pencil Button Styling overrides */
+.edit-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: #780AFF;
+}
+
+/* --- ABOUT PAGE SPECIFIC LAYOUT --- */
+
+/* 1. The Container for the Hero Text + The Visual Image */
+.about-hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    gap: 60px;
+}
+
+/* 2. The Text Side */
+.about-text-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.about-label {
+    font-family: 'Creato Display', sans-serif;
+    font-weight: 600;
+    color: #255BEC; /* JustJava Blue */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.about-headline {
+    font-family: 'Creato Display', sans-serif;
+    font-size: 56px;
+    line-height: 1.1;
+    color: #070F29;
+    margin-bottom: 24px;
+}
+
+.about-subtext {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(7, 15, 41, 0.7);
+    margin-bottom: 32px;
+}
+
+/* 3. Re-using your Service Cards for "Values" */
+.values-section {
+    background: #F9FAFC;
+    padding: 80px 20px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS FOR ABOUT --- */
+@media (max-width: 1024px) {
+    .about-hero-wrapper {
+        flex-direction: column-reverse; /* Image on top on mobile */
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .about-text-content {
+        max-width: 100%;
+    }
+
+    .video-play-btn {
+        width: 70px;
+        height: 70px; /* Slightly smaller on mobile */
+    }
+}

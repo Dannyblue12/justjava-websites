@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>About Us - JustJava</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <section class="about-hero-section">
+        <div class="about-hero-wrapper">
+
+            <div class="about-text-content">
+                <span class="about-label">Who We Are</span>
+                <h1 class="about-headline">We build software that <span style="color: #780AFF;">actually works</span> for your business.</h1>
+                <p class="about-subtext">
+                    JustJava isn't just a dev shop. We are a technical partner for startups and scale-ups.
+                    We believe that code is easy, but engineering reliable systems is hard—and that's exactly what we love to do.
+                </p>
+                <a href="#" class="action-btn" style="display:inline-flex;">
+                    <div class="circle-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#070F29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                    <span class="btn-text">Meet the Team</span>
+                </a>
+            </div>
+
+            <div class="hero-visual-content">
+
+                <div class="visual-bg-blob"></div>
+
+                <div class="hero-image-wrapper">
+                    <img th:src="@{/images/team-meeting.jpg}" alt="JustJava Team" class="hero-main-img">
+
+                    <div class="video-play-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 3L19 12L5 21V3Z" fill="#070F29" stroke="#070F29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="section-heading" style="text-align: center; margin-bottom: 40px;">Our DNA</div>
+
+        <div class="values-grid">
+
+            <div class="grid-card">
+                <div class="card-icon-gif" style="background-image: url('/images/icon-rocket.gif');"></div>
+                <h3 class="card-title-lg">Engineering First</h3>
+                <p class="card-desc">We don't just drag-and-drop. We engineer robust backends using Java Spring Boot and scalable frontends. Performance isn't an afterthought; it's the foundation.</p>
+                <div class="spacer-gap"></div>
+            </div>
+
+            <div class="grid-card">
+                <div class="card-icon-gif" style="background-image: url('/images/icon-shield.gif');"></div>
+                <h3 class="card-title-lg">Transparency</h3>
+                <p class="card-desc">No hidden fees, no "black box" development. You have direct access to the engineers building your product via our dedicated pods.</p>
+                <div class="spacer-gap"></div>
+            </div>
+
+            <div class="grid-card">
+                <div class="card-icon-gif" style="background-image: url('/images/icon-sync.gif');"></div>
+                <h3 class="card-title-lg">Long-term Partners</h3>
+                <p class="card-desc">We don't just launch and leave. Our CoreCare™ system ensures your software stays updated, secure, and ready for scale long after the MVP.</p>
+                <div class="spacer-gap"></div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

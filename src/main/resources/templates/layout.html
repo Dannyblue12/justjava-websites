@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustJava - Web Design & Development</title>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><img th:src="@{/images/JJ LOGO 2.png}" alt="JustJava Logo"></div>
+        <div class="nav-items-wrapper">
+            <div class="nav-links">
+                <a href="/" class="nav-item">Services</a>
+                <a href="#" class="nav-item">DesignOS</a>
+                <a th:href="@{/about}" class="nav-item">About us</a>
+                <a href="#" class="nav-item">Insights</a>
+            </div>
+        </div>
+        <a href="#" class="book-call-btn"><span class="btn-text" style="color: #FFFFFF;">Book a call</span></a>
+    </div>
+</nav>
+
+<div layout:fragment="content">
+</div>
+
+<footer class="footer">
+    <div class="footer-first-layout">
+        <div class="footer-text">© 2025 JustJava. All rights reserved.</div>
+        <div class="email-field">
+            <div class="input-wrapper">
+                <svg class="profile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <input type="email" class="email-input" placeholder="Enter your email">
+            </div>
+            <button class="subscribe-btn"><span class="subscribe-text">Subscribe</span><svg class="send-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13M22 2l-7 20L11 13m0 0L2 9m9 4l9-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+    </div>
+</footer>
+
+<th:block layout:fragment="page_scripts">
+</th:block>
+
+</body>
+</html>
