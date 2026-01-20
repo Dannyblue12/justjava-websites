@@ -1,0 +1,35 @@
+server:
+  port: 8082  # Your Spring Boot App runs here
+
+spring:
+
+  datasource:
+    # This points to your local Postgres
+    url: jdbc:postgresql://localhost:5432/justjava_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8081/realms/master
+        registration:
+          keycloak:
+            provider: keycloak
+            client-name: user
+            client-id: user
+            client-secret: 7wIwCinzhpwsQ5HOUy9Um79vUL8epsnb
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email
