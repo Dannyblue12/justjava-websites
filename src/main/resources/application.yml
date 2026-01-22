@@ -1,6 +1,10 @@
 server:
   # Uses the PORT provided by Railway, or defaults to 8081 if running locally
   port: ${PORT:8081}
+  forward-headers-strategy: native
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
 
 spring:
   # --- DATABASE CONFIGURATION ---
