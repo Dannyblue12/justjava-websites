@@ -1,15 +1,20 @@
 server:
-  port: 8085  # Your Spring Boot App runs here
+  # Uses the PORT provided by Railway, or defaults to 8081 if running locally
+  port: ${PORT:8081}
+  forward-headers-strategy: native
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
 
 spring:
-
+  # --- DATABASE CONFIGURATION ---
   datasource:
-    # This points to your local Postgres
-    url: jdbc:postgresql://localhost:5432/justjava_db
+    url: jdbc:postgresql://mainline.proxy.rlwy.net:43963/railway
     username: postgres
-    password: root
+    password: EKzHpCQRDxslQJkakaovtfXkqQMLVtqz
     driver-class-name: org.postgresql.Driver
 
+  # --- HIBERNATE / JPA SETTINGS ---
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,18 +23,22 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-
+  # --- SECURITY / KEYCLOAK CONFIGURATION ---
   security:
     oauth2:
       client:
+        # 1. THE PROVIDER (Where Keycloak lives)
         provider:
           keycloak:
-            issuer-uri: http://localhost:8081/realms/master
+            issuer-uri: https://keycloak-production-05ac.up.railway.app/realms/master
+
+        # 2. THE REGISTRATION (Your App's Identity)
         registration:
           keycloak:
             provider: keycloak
-            client-name: user
-            client-id: user
-            client-secret: 7wIwCinzhpwsQ5HOUy9Um79vUL8epsnb
+            # IMPORTANT: You named this 'users' here.
+            # Make sure the Client ID in Keycloak website is also named 'users' (not 'user')!
+            client-id: users
+            client-secret: wqg5CFIEdyDv37LhFmhOr9lOB0NlKgdN
             authorization-grant-type: authorization_code
             scope: openid,profile,email
