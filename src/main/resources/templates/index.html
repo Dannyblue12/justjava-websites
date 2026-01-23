@@ -43,7 +43,7 @@
                     <span class="inline-group">
                     <img th:src="@{/images/e5a2be47d967bbb5c7c3bdaa2786f74e154ade0b (2).gif}" id="slot-gif" class="dynamic-gif" alt="Action">
                     <span id="slot-2" class="dynamic-text action-text">Build</span>
-                    <button id="edit-hero-btn" class="edit-icon-btn" title="Edit this text">
+                    <button th:if="${editMode}" id="edit-hero-btn" class="edit-icon-btn" title="Edit this text">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.1464 1.14645C12.3417 0.951184 12.6583 0.951184 12.8536 1.14645L14.8536 3.14645C15.0488 3.34171 15.0488 3.65829 14.8536 3.85355L5.85355 12.8536C5.80382 12.9033 5.74215 12.9419 5.675 12.9659L2.32175 14.0873C1.97418 14.1988 1.58825 14.0315 1.47676 13.6839C1.4327 13.5562 1.4327 13.4188 1.47676 13.2911L2.59818 9.93775C2.62225 9.87078 2.66076 9.80938 2.71045 9.75969L11.7109 0.759172C11.9061 0.563905 12.2227 0.563905 12.418 0.759172L12.1464 1.14645ZM13.4393 2.45306L12.4963 1.50983L3.98961 10.0164L4.93284 10.9596L13.4393 2.45306Z" fill="currentColor"/></svg>
                     </button>
                 </span><br>
@@ -55,13 +55,13 @@
                     <div class="display-view">
                         <span class="testimonial-text" th:text="${heroText.content}">Loading...</span>
 
-                        <button class="edit-toggle-btn" title="Edit testimonial">
+                        <button th:if="${editMode}" class="edit-toggle-btn" title="Edit testimonial">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.1464 1.14645C12.3417 0.951184 12.6583 0.951184 12.8536 1.14645L14.8536 3.14645C15.0488 3.34171 15.0488 3.65829 14.8536 3.85355L5.85355 12.8536C5.80382 12.9033 5.74215 12.9419 5.675 12.9659L2.32175 14.0873C1.97418 14.1988 1.58825 14.0315 1.47676 13.6839C1.4327 13.5562 1.4327 13.4188 1.47676 13.2911L2.59818 9.93775C2.62225 9.87078 2.66076 9.80938 2.71045 9.75969L11.7109 0.759172C11.9061 0.563905 12.2227 0.563905 12.418 0.759172L12.1464 1.14645ZM13.4393 2.45306L12.4963 1.50983L3.98961 10.0164L4.93284 10.9596L13.4393 2.45306Z" fill="currentColor"/></svg>
                         </button>
                     </div>
 
                     <div class="edit-form-container">
-                        <form th:action="@{/save-hero}" method="POST" class="ajax-save-form">
+                        <form th:action="@{/admin/save-hero}" method="POST" class="ajax-save-form">
                             <textarea name="content" class="edit-textarea" th:text="${heroText.content}"></textarea>
 
                             <div class="clearfix">
@@ -140,13 +140,14 @@
                     <div class="editable-wrapper">
                         <div class="display-view">
                             <div class="testimonial-text" th:text="${testimonial.content}"></div>
-                            <button class="edit-testimonial-btn edit-toggle-btn" title="Edit testimonial">
+
+                            <button th:if="${editMode}" class="edit-testimonial-btn edit-toggle-btn" title="Edit testimonial">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.1464 1.14645C12.3417 0.951184 12.6583 0.951184 12.8536 1.14645L14.8536 3.14645C15.0488 3.34171 15.0488 3.65829 14.8536 3.85355L5.85355 12.8536C5.80382 12.9033 5.74215 12.9419 5.675 12.9659L2.32175 14.0873C1.97418 14.1988 1.58825 14.0315 1.47676 13.6839C1.4327 13.5562 1.4327 13.4188 1.47676 13.2911L2.59818 9.93775C2.62225 9.87078 2.66076 9.80938 2.71045 9.75969L11.7109 0.759172C11.9061 0.563905 12.2227 0.563905 12.418 0.759172L12.1464 1.14645ZM13.4393 2.45306L12.4963 1.50983L3.98961 10.0164L4.93284 10.9596L13.4393 2.45306Z" fill="currentColor"/></svg>
                             </button>
                         </div>
 
                         <div class="edit-form-container">
-                            <form th:action="@{/save-testimonial}" method="POST" class="ajax-save-form">
+                            <form th:action="@{/admin/save-testimonial}" method="POST" class="ajax-save-form">
                                 <input type="hidden" name="id" th:value="${testimonial.id}">
 
                                 <textarea name="content" class="edit-textarea" th:text="${testimonial.content}"></textarea>
@@ -183,18 +184,6 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-first-layout">
-            <div class="footer-text">© 2025 JustJava. All rights reserved.</div>
-            <div class="email-field">
-                <div class="input-wrapper">
-                    <svg class="profile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <input type="email" class="email-input" placeholder="Enter your email">
-                </div>
-                <button class="subscribe-btn"><span class="subscribe-text">Subscribe</span><svg class="send-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13M22 2l-7 20L11 13m0 0L2 9m9 4l9-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-        </div>
-    </footer>
 </div>
 <th:block layout:fragment="page_scripts">
     <script>
@@ -260,7 +249,7 @@
             });
         }
 
-        // 2. FORM EDIT & SAVE LOGIC (AJAX)
+        // 2. TOGGLE LOGIC ONLY (AJAX REMOVED)
         $(document).ready(function() {
 
             // A. Toggle visibility (Show Form, Hide Text)
@@ -277,31 +266,7 @@
                 wrapper.find('.display-view').fadeIn();
             });
 
-            // C. INTERCEPT FORM SUBMIT (This keeps text on screen without refresh)
-            $('.ajax-save-form').on('submit', function(e) {
-                e.preventDefault(); // Stop the page from reloading!
-
-                var form = $(this);
-                var wrapper = form.closest('.editable-wrapper');
-                var newContent = form.find('.edit-textarea').val();
-                var url = form.attr('action');
-
-                // 1. Send data to backend silently
-                $.post(url, form.serialize(), function(response) {
-                    console.log("Saved successfully to server console.");
-                }).fail(function() {
-                    // If the error persists, check Developer Tools > Network > Status Code
-                    alert("Error connecting to server, but text updated locally.");
-                });
-
-                // 2. Update the text on the screen immediately
-                wrapper.find('.testimonial-text').text(newContent);
-
-                // 3. Close the form and show the new text
-                form.closest('.edit-form-container').hide();
-                wrapper.find('.display-view').fadeIn();
-            });
-
+            // C. AJAX BLOCK HAS BEEN DELETED TO ALLOW NORMAL FORM SUBMISSION
         });
     </script>
 </th:block>

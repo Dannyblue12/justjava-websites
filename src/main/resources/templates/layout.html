@@ -10,12 +10,32 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    <style>
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        /* Style for the Logout link that only appears inside Admin Mode */
+        .logout-link {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .admin-user-text {
+            color: #ffffff;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo"><img th:src="@{/images/JJ LOGO 2.png}" alt="JustJava Logo"></div>
+
         <div class="nav-items-wrapper">
             <div class="nav-links">
                 <a href="/" class="nav-item">Services</a>
@@ -24,7 +44,15 @@
                 <a href="#" class="nav-item">Insights</a>
             </div>
         </div>
-        <a href="#" class="book-call-btn"><span class="btn-text" style="color: #FFFFFF;">Book a call</span></a>
+
+        <div class="nav-actions">
+            <a href="#" class="book-call-btn"><span class="btn-text" style="color: #FFFFFF;">Book a call</span></a>
+
+            <div th:if="${editMode}" style="display: flex; gap: 10px; align-items: center;">
+                <span class="admin-user-text">Hi, <span th:text="${username}">Admin</span></span>
+                <a href="/logout" class="logout-link">Logout</a>
+            </div>
+        </div>
     </div>
 </nav>
 

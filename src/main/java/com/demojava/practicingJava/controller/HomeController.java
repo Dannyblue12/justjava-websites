@@ -2,12 +2,13 @@ package com.demojava.practicingJava.controller;
 
 import com.demojava.practicingJava.model.Testimonial;
 import com.demojava.practicingJava.repository.TestimonialRepository;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,31 +21,61 @@ public class HomeController {
         this.testimonialRepository = testimonialRepository;
     }
 
-    @GetMapping("/")
-    public String home(Model model) {
-        // 1. GET HERO TEXT
-        // We look for a special row where authorName is "HERO_CONTENT"
-        Testimonial heroText = testimonialRepository.findByAuthorName("HERO_CONTENT");
 
-        // If it doesn't exist (first time running), create it
-        if (heroText == null) {
-            heroText = new Testimonial(
-                    "We help start-ups and scale-ups build, launch, and maintain reliable software with dedicated engineering pods and a structured delivery process.",
-                    "HERO_CONTENT", // <--- THIS IS THE FLAG
-                    "System",
-                    "default.jpg"
-            );
-            testimonialRepository.save(heroText);
-        }
-        model.addAttribute("heroText", heroText);
+    @GetMapping({"/", "/public"})
+    public String publicPage(Model model) {
+        // Load the data (Hero text + Grid)
+        loadPageData(model);
 
-
-        // 2. GET TESTIMONIALS (GRID)
-        // Fetch everything EXCEPT the Hero Content row so it doesn't show up in the grid
-        List<Testimonial> testimonials = testimonialRepository.findByAuthorNameNot("HERO_CONTENT");
-        model.addAttribute("testimonials", testimonials);
+        // Turn EDIT MODE -> OFF
+        model.addAttribute("editMode", false);
 
         return "index";
+    }
+
+    @GetMapping("/admin")
+    public String adminPage(Model model, @AuthenticationPrincipal OAuth2User principal) {
+        // Load the same data
+        loadPageData(model);
+
+        // Turn EDIT MODE -> ON
+        model.addAttribute("editMode", true);
+
+        // Get the logged-in user's name (e.g., "Daniel")
+        if (principal != null) {
+            String name = principal.getAttribute("name"); // Keycloak usually sends 'name' or 'preferred_username'
+            model.addAttribute("username", name != null ? name : "Admin");
+        }
+
+        return "index";
+    }
+
+
+    @PostMapping("/admin/save-testimonial")
+    public String saveTestimonial(
+            @RequestParam(name = "id") Long id,
+            @RequestParam("content") String newContent
+    ) {
+        Testimonial t = testimonialRepository.findById(id).orElse(null);
+
+        if (t != null) {
+            t.setContent(newContent);
+            testimonialRepository.save(t);
+        }
+        // Redirect back to the Admin page to see changes immediately
+        return "redirect:/admin";
+    }
+
+    @PostMapping("/admin/save-hero")
+    public String saveHero(@RequestParam("content") String newContent) {
+        Testimonial heroText = testimonialRepository.findByAuthorName("HERO_CONTENT");
+
+        if (heroText != null) {
+            heroText.setContent(newContent);
+            testimonialRepository.save(heroText);
+        }
+        // Redirect back to the Admin page
+        return "redirect:/admin";
     }
 
     @GetMapping("/about")
@@ -52,39 +83,26 @@ public class HomeController {
         return "about";
     }
 
-    // --- 1. SAVE TESTIMONIALS (Updates existing ones using ID) ---
-    @PostMapping("/save-testimonial")
-    @ResponseBody
-    public String saveTestimonial(
-            @RequestParam(name = "id") Long id, // <--- Required to find the right row
-            @RequestParam("content") String newContent
-    ) {
-        // Find the existing row in the database
-        Testimonial t = testimonialRepository.findById(id).orElse(null);
 
-        if (t != null) {
-            // Update the content (keep image/name the same)
-            t.setContent(newContent);
-            testimonialRepository.save(t); // This performs an UPDATE
-            return "Updated Successfully";
-        }
-
-        return "Error: Testimonial not found";
-    }
-
-    // --- 2. SAVE HERO TEXT (Finds the special "HERO_CONTENT" row) ---
-    @PostMapping("/save-hero")
-    @ResponseBody
-    public String saveHero(@RequestParam("content") String newContent) {
-        // Find the specific Hero row
+    private void loadPageData(Model model) {
+        // A. GET HERO TEXT
         Testimonial heroText = testimonialRepository.findByAuthorName("HERO_CONTENT");
 
-        if (heroText != null) {
-            heroText.setContent(newContent);
+        // First time setup: Create it if missing
+        if (heroText == null) {
+            heroText = new Testimonial(
+                    "We help start-ups and scale-ups build, launch, and maintain reliable software with dedicated engineering pods and a structured delivery process.",
+                    "HERO_CONTENT",
+                    "System",
+                    "default.jpg"
+            );
             testimonialRepository.save(heroText);
-            return "Saved Hero Text";
         }
+        model.addAttribute("heroText", heroText);
 
-        return "Error: Hero text not found";
+        // B. GET TESTIMONIALS (GRID)
+        // Exclude the Hero Content row
+        List<Testimonial> testimonials = testimonialRepository.findByAuthorNameNot("HERO_CONTENT");
+        model.addAttribute("testimonials", testimonials);
     }
 }

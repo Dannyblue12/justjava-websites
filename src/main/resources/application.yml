@@ -1,5 +1,5 @@
 server:
-  port: 8082  # Your Spring Boot App runs here
+  port: 8085  # Your Spring Boot App runs here
 
 spring:
 
