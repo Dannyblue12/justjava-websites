@@ -30,7 +30,7 @@ spring:
         # 1. THE PROVIDER (Where Keycloak lives)
         provider:
           keycloak:
-            issuer-uri: https://keycloak-production-05ac.up.railway.app/realms/master
+            issuer-uri: https://keycloak-production-05ac.up.railway.app/realms/dannycodes
 
         # 2. THE REGISTRATION (Your App's Identity)
         registration:
@@ -39,6 +39,6 @@ spring:
             # IMPORTANT: You named this 'users' here.
             # Make sure the Client ID in Keycloak website is also named 'users' (not 'user')!
             client-id: users
-            client-secret: wqg5CFIEdyDv37LhFmhOr9lOB0NlKgdN
+            client-secret: Ji0TEg5C3mc0GrG2y2fz3I2ara4snbHP
             authorization-grant-type: authorization_code
             scope: openid,profile,email
