@@ -30,7 +30,7 @@ spring:
         # 1. THE PROVIDER (Where Keycloak lives)
         provider:
           keycloak:
-            issuer-uri: https://keycloak-production-05ac.up.railway.app/realms/dannycodes
+            issuer-uri: https://my-keycloak-theme-production.up.railway.app/realms/dannycodes
 
         # 2. THE REGISTRATION (Your App's Identity)
         registration:
